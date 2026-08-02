@@ -1,0 +1,9 @@
+# Workspace internal files - JANGAN push ke GitHub
+memory/
+media/
+skills/
+config/
+.clawhub/
+openclaw-workspace-state.json
+*.md
+threads_screen.png
