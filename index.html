@@ -95,28 +95,8 @@
             </h2>
         </div>
 
-        <div class="space-y-6">
-
-                        <!-- Featured: Weekly Market Outlook -->
-            <article class="bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                <a href="artikel/weekly-outlook.html" class="block p-6 md:p-8">
-                    <div class="flex items-center gap-2 text-xs text-stone-500 mb-3">
-                        <span class="font-semibold text-amber-800 uppercase">Ekonomi</span>
-                        <span>•</span>
-                        <time datetime="2026-08-02">2 Ogos 2026</time>
-                        <span>•</span>
-                        <span>5 minit bacaan</span>
-                    </div>
-                    <h3 class="font-serif text-xl md:text-2xl font-bold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">
-                        Weekly Market Outlook: Rejection Di Channel Atas &amp; Hawkish Hold Yang Mendebarkan
-                    </h3>
-                    <p class="text-stone-600 mt-3 text-sm md:text-base leading-relaxed">
-                        BTC berdepan rejection, SOL dalam fasa bearish, FOMC hawkish hold — price levels, scenario &amp; strategi DCA untuk minggu ini.
-                    </p>
-                    <span class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-amber-800 hover:underline">Baca artikel penuh →</span>
-                </a>
-            </article>
-
+        <div id="artikelTerbaru" class="space-y-6">
+            <p class="text-stone-500 text-sm">Memuatkan artikel terbaru…</p>
         </div>
 
     </main>
@@ -142,6 +122,37 @@ function toggleMenu(){
   if(ci)ci.classList.toggle('hidden',open);
   if(btn)btn.setAttribute('aria-expanded',open?'true':'false');
 }
+</script>
+
+<script>
+// Render senarai "Artikel Terbaru" dari data/artikel.json (auto-update setiap kali artikel baru ditambah)
+(function(){
+  var container=document.getElementById('artikelTerbaru');
+  if(!container) return;
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
+  fetch('data/artikel.json').then(function(r){return r.json();}).then(function(data){
+    var list=(data.artikel||[]).slice().sort(function(a,b){return b.tarikh>a.tarikh?1:-1;});
+    var latest=list.slice(0,4);
+    if(!latest.length){container.innerHTML='<p class="text-stone-500 text-sm">Tiada artikel buat masa ini.</p>';return;}
+    var out='';
+    latest.forEach(function(a){
+      var cat=a.kategori==='Ekonomi'?'text-amber-800':'text-stone-500';
+      var ext= a.link && a.link.indexOf('//')===0 ? ' target="_blank" rel="noopener"' : '';
+      out+='<article class="bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">';
+      out+='<a href="'+esc(a.link)+'"'+ext+' class="block p-6 md:p-8">';
+      out+='<div class="flex flex-wrap items-center gap-2 text-xs text-stone-500 mb-3">';
+      out+='<span class="font-semibold uppercase '+(a.kategori==='Ekonomi'?'text-amber-800':'text-stone-500')+'">'+esc(a.kategori)+'</span>';
+      out+='<span>•</span><time datetime="'+esc(a.tarikh)+'">'+esc(a.tarikhLabel)+'</time>';
+      out+='<span>•</span><span>'+esc(a.minit)+' minit bacaan</span>';
+      out+='</div>';
+      out+='<h3 class="font-serif text-xl md:text-2xl font-bold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">'+esc(a.judul)+'</h3>';
+      out+='<p class="text-stone-600 mt-3 text-sm md:text-base leading-relaxed">'+esc(a.ringkasan)+'</p>';
+      out+='<span class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-amber-800">Baca artikel penuh →</span>';
+      out+='</a></article>';
+    });
+    container.innerHTML=out;
+  }).catch(function(){container.innerHTML='<p class="text-stone-500 text-sm">Gagal memuatkan artikel. Sila muat semula.</p>';});
+})();
 </script>
 
 </body>
