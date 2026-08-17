@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAJUK_BERITA - The Frugal Fox</title>
+    <meta name="description" content="Apa Kata Akhbar TARIKH: ringkasan berita ...">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter & Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-stone-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-3xl">🦊</span>
+                <div>
+                    <span class="font-serif font-bold text-xl text-stone-900 group-hover:text-amber-700 transition-colors">The Frugal Fox</span>
+                    <p class="text-[10px] text-stone-500 tracking-wider uppercase font-medium">Analisis Ekonomi &amp; Pasaran</p>
+                </div>
+            </a>
+            <nav class="flex items-center gap-5">
+                <a href="../index.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Utama</a>
+                <a href="../ekonomi.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Ekonomi</a>
+                <a href="../akhbar.html" class="text-sm font-medium text-amber-800 font-semibold transition-colors">Akhbar</a>
+                <a href="../ebook.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Ebook</a>
+                <a href="https://t.me/TheFrugalFox" target="_blank" class="px-3.5 py-1.5 bg-stone-900 text-stone-50 text-xs font-semibold rounded-full hover:bg-amber-800 transition-colors">
+                    Telegram 🚀
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-3xl mx-auto px-4 py-10 w-full">
+
+        <article class="bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden p-6 md:p-10">
+            <!-- Article Header -->
+            <header class="mb-8 pb-6 border-b border-stone-100">
+                <div class="flex items-center gap-2 text-xs text-stone-500 mb-3">
+                    <a href="../akhbar.html" class="font-semibold text-amber-800 uppercase hover:underline">Apa Kata Akhbar</a>
+                    <span>•</span>
+                    <time datetime="2026-08-17">17 Ogos 2026</time>
+                    <span>•</span>
+                    <span>NAMA_AKHBAR</span>
+                </div>
+                <h1 class="font-serif text-2xl md:text-3xl font-bold text-stone-900 leading-tight">
+                    TAJUK_BERITA
+                </h1>
+                <div class="flex items-center gap-3 mt-6">
+                    <div class="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-lg">🦊</div>
+                    <div>
+                        <span class="text-sm font-semibold text-stone-950 block">Frugal Fox</span>
+                        <span class="text-[11px] text-stone-500 block">Pembantu Automasi &amp; Penganalisis Pasaran</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <figure class="mb-8">
+                <img src="PATH_GAMBAR" alt="TAJUK_BERITA" class="w-full rounded-xl border border-stone-200">
+                <figcaption class="text-xs text-stone-500 mt-2">Sumber: NAMA_AKHBAR</figcaption>
+            </figure>
+
+            <!-- Article Body -->
+            <div class="text-stone-700 leading-relaxed space-y-6 text-[15px]">
+                <p class="italic text-stone-500">
+                    Salam Foxians! 🦊 Kali ni kita tengok apa kata akhbar...
+                </p>
+
+                <!-- Content section -->
+                <section class="space-y-3">
+                    <h2 class="font-serif text-xl font-bold text-stone-900 flex items-center gap-2">
+                        <span>📰</span> Ringkasan Berita
+                    </h2>
+                    <p>ISI_KANDUNGAN...</p>
+                </section>
+
+                <!-- Source link -->
+                <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 text-sm">
+                    <span class="font-semibold text-stone-900 block mb-1">🔗 Sumber Asal</span>
+                    <a href="LINK_SUMBER" target="_blank" class="text-amber-800 hover:underline break-all">LINK_SUMBER</a>
+                    <span class="block text-xs text-stone-500 mt-1">Dikongsi pada <time datetime="2026-08-17">17 Ogos 2026</time></span>
+                </div>
+
+                <!-- Disclaimer -->
+                <footer class="mt-8 pt-6 border-t border-stone-100 text-xs text-stone-500 space-y-2">
+                    <p><strong>⚠️ Penafian (Disclaimer):</strong> Kandungan ini adalah ringkasan &amp; analisis berita daripada sumber awam yang dinyatakan. Kredit kepada penerbit asal. Ini <strong>bukan nasihat kewangan (NFA)</strong>.</p>
+                    <p class="text-center font-medium text-stone-600 mt-4">Tetap berdisiplin, terus belajar. Frugal Fox 🦊</p>
+                </footer>
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-6 text-center">
+            <a href="../akhbar.html" class="text-sm font-semibold text-amber-800 hover:underline">← Semua Apa Kata Akhbar</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-stone-200 bg-white py-8 text-center text-xs text-stone-500 mt-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <p>© 2026 The Frugal Fox. Diperkasakan oleh <a href="https://github.com" target="_blank" class="hover:underline font-semibold text-stone-700">GitHub Pages</a>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
