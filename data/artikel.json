@@ -1,13 +1,22 @@
 {
   "artikel": [
     {
-      "judul": "Apa Kata Akhbar — Selasa, 18 Ogos 2026",
+      "judul": "UMNO, BN kekal komited dalam Kerajaan Persekutuan hingga akhir penggal",
       "kategori": "Akhbar",
       "tarikh": "2026-08-18",
       "tarikhLabel": "18 Ogos 2026",
-      "link": "akhbar/18-ogos-2026.html",
-      "ringkasan": "Digest berita harian: UMNO & DAP kekal sokong kerajaan, sami Gunung Kanthan, kes 1MDB & Muhyiddin, gempa Indonesia, ketegangan Iran & banjir Asia — 14 tajuk tempatan & antarabangsa.",
-      "minit": 5
+      "link": "akhbar/18-ogos-2026/01-umno-komited.html",
+      "ringkasan": "Mohamed Khaled sahkan sokongan penuh UMNO & BN kepada Kerajaan Persekutuan hingga akhir penggal — isyarat kestabilan politik Malaysia.",
+      "minit": 3
+    },
+    {
+      "judul": "DAP kekal dalam pentadbiran Kerajaan Perpaduan",
+      "kategori": "Akhbar",
+      "tarikh": "2026-08-18",
+      "tarikhLabel": "18 Ogos 2026",
+      "link": "akhbar/18-ogos-2026/02-dap-kekal.html",
+      "ringkasan": "Majoriti perwakilan DAP undi kekal dalam Kerajaan Perpaduan (1,857/2,099) menerusi usul sokong kerajaan.",
+      "minit": 3
     },
     {
       "judul": "Weekly Market Outlook: Fasa Bottom-Hunting Yang Belum Confirm",
